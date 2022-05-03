@@ -36,9 +36,9 @@ class BasedActivity : AppCompatActivity() {
 
         instru_type.setOnItemClickListener { adapterView, view, i, l ->
 
-            var cat:String=arr[i]
+            var type:String=arr[i]
             var obj= Intent(this,ViewinstrumentsActivity::class.java)
-            obj.putExtra("cat",cat)
+            obj.putExtra("type",type)
             startActivity(obj)
         }
     }
