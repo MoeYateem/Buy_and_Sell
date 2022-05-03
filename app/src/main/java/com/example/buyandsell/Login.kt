@@ -41,20 +41,20 @@ class Login : AppCompatActivity() {
                 var str_Req= StringRequest(Request.Method.GET,url, Response.Listener { response ->
 
                     if(response.equals("0")){
-                        Toast.makeText(this,"Login Failed", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(this,"Login Failed", Toast.LENGTH_LONG).show()
                         Log.i(TAG, "url: "+url)
                     }
 
                     else
                     {
                         email=user_email.text.toString()
-                        Toast.makeText(this,"Login Success", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(this,"Login Success", Toast.LENGTH_LONG).show()
                         var i=Intent(this,BasedActivity::class.java)
                         startActivity(i)
                     }
 
                 }, Response.ErrorListener { error ->
-                    Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+                    //Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
                 })
 
                 req.add(str_Req)

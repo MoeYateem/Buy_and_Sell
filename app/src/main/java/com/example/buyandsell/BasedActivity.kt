@@ -1,5 +1,6 @@
 package com.example.buyandsell
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -36,9 +37,9 @@ class BasedActivity : AppCompatActivity() {
         instru_type.setOnItemClickListener { adapterView, view, i, l ->
 
             var cat:String=arr[i]
-            //var obj=Intent(this,ItemAct::class.java)
-            //obj.putExtra("cat",cat)
-            //startActivity(obj)
+            var obj= Intent(this,ViewinstrumentsActivity::class.java)
+            obj.putExtra("cat",cat)
+            startActivity(obj)
         }
     }
 }
