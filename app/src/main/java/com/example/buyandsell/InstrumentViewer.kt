@@ -43,13 +43,13 @@ class InstrumentViewer(var context: Context, var list:ArrayList<Instrument>) : R
             Picasso.get().load(web).into(itemView.item_photo)
 
 
-            //itemView.item_add_photo.setOnClickListener {
+            itemView.item_add_photo.setOnClickListener {
 
-                //UserInfo.itemId=item_id
+                UserInfo.itemId=item_id
 
-                //var obj=QtyFragment()
-                //var manager=(itemView.context as Activity).fragmentManager
-                //obj.show(manager,"Qty")
+                var obj=QtyFragment()
+                var manager=(itemView.context as Activity).fragmentManager
+                obj.show(manager,"Qty")
            // }
 
         }
