@@ -28,7 +28,7 @@ class CartActivity : AppCompatActivity() {
         var jar= JsonArrayRequest(Request.Method.GET,url,null, Response.Listener { response ->
 
             for(x in 0..response.length()-1)
-                list.add("Name : " + response.getJSONObject(x).getString("item_name") + "\n" +
+                list.add("Name : " + response.getJSONObject(x).getString("name") + "\n" +
                         "Price : "+  response.getJSONObject(x).getString("price"))
 
             var adp= ArrayAdapter(this,android.R.layout.simple_list_item_1,list)
