@@ -54,44 +54,26 @@ class CartActivity : AppCompatActivity() {
             var i = Intent(this, BasedActivity::class.java)
             startActivity(i)
         }
+
+
+
+        if(item?.itemId==R.id.item_cancel)
+        {
+            var url="http://192.168.232.1/buysellbackend/remove_cart.php?email=" + User_stuff.email
+
+            var rq:RequestQueue=Volley.newRequestQueue(this)
+            var sr= StringRequest(Request.Method.GET,url,Response.Listener { response ->
+
+                var i=Intent(this,BasedActivity::class.java)
+                startActivity(i)
+
+            },Response.ErrorListener { error ->
+                Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
+            })
+
+            rq.add(sr)
+        }
+
         return super.onOptionsItemSelected(item)
     }
-
-
-//        if(item?.itemId==R.id.item_cancel)
-//        {
-//            var url="http://192.168.232.1/buysellbackend/remove_cart.php?email=" + User_stuff.email
-//
-//            var rq:RequestQueue=Volley.newRequestQueue(this)
-//            var sr= StringRequest(Request.Method.GET,url,Response.Listener { response ->
-//
-//                var i=Intent(this,ViewinstrumentsActivity::class.java)
-//                startActivity(i)
-//
-//            },Response.ErrorListener { error ->
-//                Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
-//            })
-//
-//            rq.add(sr)
-//        }
-
-//        if(item?.itemId==R.id.item_confirm)
-//        {
-//            var url="http://192.168.8.100/SalesWeb/confirm_order.php?mobile=" + User_stuff.email
-//            var rq:RequestQueue=Volley.newRequestQueue(this)
-//            var sr= StringRequest(Request.Method.GET,url,Response.Listener { response ->
-//
-//                var i=Intent(this,TotalAct::class.java)
-//                i.putExtra("bno",response)
-//                startActivity(i)
-//
-//            },Response.ErrorListener { error ->
-//                Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
-//            })
-//
-//            rq.add(sr)
-//        }
-//
-//        return super.onOptionsItemSelected(item)
-//    }
 }
