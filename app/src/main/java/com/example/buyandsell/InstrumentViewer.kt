@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.instrument_tuple.view.*
 
 
+@Suppress("DEPRECATION")
 class InstrumentViewer(var context: Context, var list:ArrayList<Instrument>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
@@ -45,12 +46,13 @@ class InstrumentViewer(var context: Context, var list:ArrayList<Instrument>) : R
 
             itemView.item_add_photo.setOnClickListener {
 
-                UserInfo.itemId=item_id
+                User_stuff.instrument_name=nm
+                Log.i(TAG, "bind: instru name:"+  User_stuff.instrument_name)
 
-                var obj=QtyFragment()
-                var manager=(itemView.context as Activity).fragmentManager
-                obj.show(manager,"Qty")
-           // }
+                var obj=QtFragment()
+                //var manager=(itemView.context as Activity).fragmentManager
+                //obj.show(manager,"Qt")
+           }
 
         }
     }

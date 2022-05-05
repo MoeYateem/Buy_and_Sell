@@ -47,7 +47,7 @@ class Login : AppCompatActivity() {
 
                     else
                     {
-                        email=user_email.text.toString()
+                        User_stuff.email=user_email.text.toString()
                         //Toast.makeText(this,"Login Success", Toast.LENGTH_LONG).show()
                         var i=Intent(this,BasedActivity::class.java)
                         startActivity(i)
