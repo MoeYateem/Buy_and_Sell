@@ -18,7 +18,9 @@
         android:id="@+id/signup_Email"
         android:layout_margin="20dp"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:background="#9932CC"
+        />
 
     <EditText
         android:layout_width="match_parent"
@@ -29,7 +31,8 @@
         android:textColorHint="#fff"
         android:id="@+id/signup_Password"
         android:layout_margin="20dp"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:background="#9932CC"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -40,7 +43,8 @@
         android:textColorHint="#fff"
         android:id="@+id/password_Confirmation"
         android:layout_margin="20dp"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:background="#9932CC"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -51,7 +55,8 @@
         android:textColorHint="#fff"
         android:id="@+id/signup_Name"
         android:layout_margin="20dp"
-        android:inputType="text" />
+        android:inputType="text"
+        android:background="#9932CC"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -62,7 +67,8 @@
         android:textColorHint="#fff"
         android:id="@+id/signup_Address"
         android:layout_margin="20dp"
-        android:inputType="text" />
+        android:inputType="text"
+        android:background="#9932CC"/>
 
     <TextView
         android:id="@+id/signup_Button"
