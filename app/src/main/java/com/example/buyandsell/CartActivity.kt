@@ -21,7 +21,7 @@ class CartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
 
-        var url="http://192.168.8.100/SalesWeb/get_temp.php?mobile="+User_stuff.email
+        var url="http://192.168.232.1/buysellbackend/get_cart.php?email="+User_stuff.email
 
         var list=ArrayList<String>()
         var rq: RequestQueue = Volley.newRequestQueue(this)
@@ -41,54 +41,54 @@ class CartActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-
-        menuInflater.inflate(R.menu.my_menu,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-
-        if(item?.itemId==R.id.item_menu)
-        {
-            var i= Intent(this,HomeAct::class.java)
-            startActivity(i)
-        }
-
-        if(item?.itemId==R.id.item_cancel)
-        {
-            var url="http://192.168.8.100/SalesWeb/cancel_order.php?mobile=" + UserInfo.mobile
-
-            var rq:RequestQueue=Volley.newRequestQueue(this)
-            var sr= StringRequest(Request.Method.GET,url,Response.Listener { response ->
-
-                var i=Intent(this,HomeAct::class.java)
-                startActivity(i)
-
-            },Response.ErrorListener { error ->
-                Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
-            })
-
-            rq.add(sr)
-        }
-
-        if(item?.itemId==R.id.item_confirm)
-        {
-            var url="http://192.168.8.100/SalesWeb/confirm_order.php?mobile=" + UserInfo.mobile
-            var rq:RequestQueue=Volley.newRequestQueue(this)
-            var sr= StringRequest(Request.Method.GET,url,Response.Listener { response ->
-
-                var i=Intent(this,TotalAct::class.java)
-                i.putExtra("bno",response)
-                startActivity(i)
-
-            },Response.ErrorListener { error ->
-                Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
-            })
-
-            rq.add(sr)
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//
+//        menuInflater.inflate(R.menu.my_menu,menu)
+//        return super.onCreateOptionsMenu(menu)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+//
+//        if(item?.itemId==R.id.item_menu)
+//        {
+//            var i= Intent(this,HomeAct::class.java)
+//            startActivity(i)
+//        }
+//
+//        if(item?.itemId==R.id.item_cancel)
+//        {
+//            var url="http://192.168.8.100/SalesWeb/cancel_order.php?mobile=" + UserInfo.mobile
+//
+//            var rq:RequestQueue=Volley.newRequestQueue(this)
+//            var sr= StringRequest(Request.Method.GET,url,Response.Listener { response ->
+//
+//                var i=Intent(this,HomeAct::class.java)
+//                startActivity(i)
+//
+//            },Response.ErrorListener { error ->
+//                Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
+//            })
+//
+//            rq.add(sr)
+//        }
+//
+//        if(item?.itemId==R.id.item_confirm)
+//        {
+//            var url="http://192.168.8.100/SalesWeb/confirm_order.php?mobile=" + UserInfo.mobile
+//            var rq:RequestQueue=Volley.newRequestQueue(this)
+//            var sr= StringRequest(Request.Method.GET,url,Response.Listener { response ->
+//
+//                var i=Intent(this,TotalAct::class.java)
+//                i.putExtra("bno",response)
+//                startActivity(i)
+//
+//            },Response.ErrorListener { error ->
+//                Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
+//            })
+//
+//            rq.add(sr)
+//        }
+//
+//        return super.onOptionsItemSelected(item)
+//    }
 }

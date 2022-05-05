@@ -65,8 +65,8 @@ class InstrumentViewer(var context: Context, var list:ArrayList<Instrument>) : R
                     //var i=Intent(activity,OrderAct::class.java)
                     //startActivity(i)
 
-                    //val i = Intent(itemView.context,BuyinstrumentActivity::class.java)
-                    //itemView.context.startActivity(i)
+                    val i = Intent(itemView.context,CartActivity::class.java)
+                    itemView.context.startActivity(i)
 
                     //var obj=QtFragment()
                     //var manager=(itemView.context as Activity).fragmentManager
