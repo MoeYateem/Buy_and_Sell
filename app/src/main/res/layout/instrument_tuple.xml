@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:text="Chicken Pizza"
+            android:text="Guitar"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
-            android:text="3.5"
+            android:text="300"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
