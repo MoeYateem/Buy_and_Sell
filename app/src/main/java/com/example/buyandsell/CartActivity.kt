@@ -41,28 +41,31 @@ class CartActivity : AppCompatActivity() {
 
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//
-//        menuInflater.inflate(R.menu.my_menu,menu)
-//        return super.onCreateOptionsMenu(menu)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-//
-//        if(item?.itemId==R.id.item_menu)
-//        {
-//            var i= Intent(this,HomeAct::class.java)
-//            startActivity(i)
-//        }
-//
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.drop_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item?.itemId == R.id.item_menu) {
+            var i = Intent(this, BasedActivity::class.java)
+            startActivity(i)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
 //        if(item?.itemId==R.id.item_cancel)
 //        {
-//            var url="http://192.168.8.100/SalesWeb/cancel_order.php?mobile=" + UserInfo.mobile
+//            var url="http://192.168.232.1/buysellbackend/remove_cart.php?email=" + User_stuff.email
 //
 //            var rq:RequestQueue=Volley.newRequestQueue(this)
 //            var sr= StringRequest(Request.Method.GET,url,Response.Listener { response ->
 //
-//                var i=Intent(this,HomeAct::class.java)
+//                var i=Intent(this,ViewinstrumentsActivity::class.java)
 //                startActivity(i)
 //
 //            },Response.ErrorListener { error ->
@@ -71,10 +74,10 @@ class CartActivity : AppCompatActivity() {
 //
 //            rq.add(sr)
 //        }
-//
+
 //        if(item?.itemId==R.id.item_confirm)
 //        {
-//            var url="http://192.168.8.100/SalesWeb/confirm_order.php?mobile=" + UserInfo.mobile
+//            var url="http://192.168.8.100/SalesWeb/confirm_order.php?mobile=" + User_stuff.email
 //            var rq:RequestQueue=Volley.newRequestQueue(this)
 //            var sr= StringRequest(Request.Method.GET,url,Response.Listener { response ->
 //
