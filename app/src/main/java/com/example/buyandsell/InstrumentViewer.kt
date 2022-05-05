@@ -15,6 +15,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.instrument_tuple.view.*
 
@@ -53,13 +58,25 @@ class InstrumentViewer(var context: Context, var list:ArrayList<Instrument>) : R
 
                 User_stuff.instrument_name=nm
                 Log.i(TAG, "bind: instru name:"+  User_stuff.instrument_name)
-                val i = Intent(itemView.context,BuyinstrumentActivity::class.java)
-                itemView.context.startActivity(i)
+                var url="http://192.168.232.1/buysellbackend/add_cart.php?email=" + User_stuff.email+"&item_name="+User_stuff.instrument_name
+                var rq: RequestQueue = Volley.newRequestQueue(itemView.context)
+                var sr= StringRequest(Request.Method.GET,url, Response.Listener { response ->
+                    Log.i(TAG, "bind: barke"+url)
+                    //var i=Intent(activity,OrderAct::class.java)
+                    //startActivity(i)
 
-                //var obj=QtFragment()
-                //var manager=(itemView.context as Activity).fragmentManager
-                //obj.show(manager,"Qt")
-                //louay is here
+                    //val i = Intent(itemView.context,BuyinstrumentActivity::class.java)
+                    //itemView.context.startActivity(i)
+
+                    //var obj=QtFragment()
+                    //var manager=(itemView.context as Activity).fragmentManager
+                    //obj.show(manager,"Qt")
+                    //louay is here
+                },Response.ErrorListener { error ->
+                    Toast.makeText(itemView.context,error.message,Toast.LENGTH_LONG).show()
+                })
+
+                rq.add(sr)
            }
 
         }
