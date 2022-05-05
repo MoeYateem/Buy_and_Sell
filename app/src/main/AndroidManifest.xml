@@ -15,6 +15,9 @@
         android:theme="@style/Theme.BuyAndSell"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
             android:name=".BuyinstrumentActivity"
             android:exported="false" />
         <activity
