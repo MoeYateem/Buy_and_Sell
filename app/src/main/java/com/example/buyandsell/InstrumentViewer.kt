@@ -3,12 +3,17 @@ package com.example.buyandsell
 import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Context
+import android.content.Intent
+
 import android.icu.number.NumberFormatter.with
 import android.icu.number.NumberRangeFormatter.with
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.instrument_tuple.view.*
@@ -48,10 +53,13 @@ class InstrumentViewer(var context: Context, var list:ArrayList<Instrument>) : R
 
                 User_stuff.instrument_name=nm
                 Log.i(TAG, "bind: instru name:"+  User_stuff.instrument_name)
+                val i = Intent(itemView.context,BuyinstrumentActivity::class.java)
+                itemView.context.startActivity(i)
 
-                var obj=QtFragment()
+                //var obj=QtFragment()
                 //var manager=(itemView.context as Activity).fragmentManager
                 //obj.show(manager,"Qt")
+                //louay is here
            }
 
         }
